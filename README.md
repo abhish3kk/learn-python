@@ -3,8 +3,6 @@
 
 Task details:
 
-  Print sum of arrays element.
+	Compare values and assign points
 
-	Enter size of array
-	Enter elements of array separated by " "
-	It will print the sum of elements in array.
+		Any element of array which is greater in comparison to element at same position of another array recieves 1 point. 0 if equal.

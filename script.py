@@ -2,20 +2,27 @@
 
 import sys
 
-def simpleArraySum(n, ar):
+def solve(a0, a1, a2, b0, b1, b2):
     # Complete this function
-    sum = 0
-    for x in ar:
-      sum = sum + x
+    sumA = 0
+    sumB = 0
+    arr = [a0, a1, a2]
+    brr = [b0, b1, b2]
+    for x in range(len(arr)):
+      if arr[x] > brr[x]:
+        sumA += 1
+      elif arr[x] < brr[x]:
+        sumB += 1
+      else:
+        sumA += 0
+        sumB += 0
 
-    return sum
+    return "%s%s"% (sumA, sumB)
 
-print("Enter size of array")
-n = int(input().strip())
-print("Enter elements separated by ' '")
-ar = list(map(int, input().strip().split(' ')))
-if n != len(ar):
-  print("size of array specified doesn't match with length of array. Please enter elements correctly")
-ar = list(map(int, input().strip().split(' ')))
-result = simpleArraySum(n, ar)
-print(result)
+
+a0, a1, a2 = input().strip().split(' ')
+a0, a1, a2 = [int(a0), int(a1), int(a2)]
+b0, b1, b2 = input().strip().split(' ')
+b0, b1, b2 = [int(b0), int(b1), int(b2)]
+result = solve(a0, a1, a2, b0, b1, b2)
+print (" ".join(map(str, result)))
